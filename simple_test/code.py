@@ -20,7 +20,7 @@ displayio.release_displays()
 
 spi = busio.SPI(clock=clk_pin, MOSI=mosi_pin)
 
-display_bus = displayio.FourWire(spi, command=board.IO37, chip_select=board.IO34, reset=board.IO38)
+display_bus = displayio.FourWire(spi, command=dc_pin, chip_select=cs_pin, reset=reset_pin)
 
 display = ST7735R(display_bus, width=128, height=160, bgr = True)
 
