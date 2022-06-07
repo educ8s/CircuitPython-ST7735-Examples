@@ -3,7 +3,7 @@ from adafruit_st7735r import ST7735R
 import displayio
 import time
 import random
-from gauge import Gauge
+from gauge import Gauge #get the library here: https://github.com/benevpi/Circuit-Python-Gauge
 
 mosi_pin = board.GP11
 clk_pin = board.GP10
