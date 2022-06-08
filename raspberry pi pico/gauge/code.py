@@ -1,8 +1,8 @@
+#Raspberry Pi Pico Version
+
 import board, busio
 from adafruit_st7735r import ST7735R
 import displayio
-import time
-import random
 from gauge import Gauge #get the library here: https://github.com/benevpi/Circuit-Python-Gauge
 
 mosi_pin = board.GP11
@@ -17,7 +17,7 @@ spi = busio.SPI(clock=clk_pin, MOSI=mosi_pin)
 
 display_bus = displayio.FourWire(spi, command=dc_pin, chip_select=cs_pin, reset=reset_pin)
 
-display = ST7735R(display_bus, width=128, height=160, bgr = 1)
+display = ST7735R(display_bus, width=128, height=160, bgr = 1 ) #bgr = 1 is needed for RGB color codes
 
 gauge = Gauge(0,100, 64, 80, value_label="x:", arc_colour=0xFF0000, colour=0xFFFF00, outline_colour=0xFFFF00)
 gauge.x = 32
@@ -62,3 +62,4 @@ while True:
         y += 5
         gauge.update(x)
         gauge2.update(y)
+
